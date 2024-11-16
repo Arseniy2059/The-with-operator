@@ -18,18 +18,19 @@ class WordsFinder():
             all_words[file_name] = words
         return all_words
 
-    def find(self, word):
+    def find(self,word):
         dict_of_words=dict()
-        for name, words in self.get_all_words().items():
-            if word in words:
-                dict_of_words[name] = words.index(word)+1
+        for name,words in self.get_all_words().items():
+            if word.lower() in words:
+                dict_of_words[name] = words.index(word.lower()) + 1
         return dict_of_words
+
 
     def count(self, word):
         dict_of_counts = dict()
-        for name, words in self.get_all_words().items():
-            if word in words:
-                dict_of_counts[name] = words.count(word)
+        for name,words in self.get_all_words().items():
+            if word.lower() in words:
+                dict_of_counts[name] = words.index(word.lower()) + 1
         return dict_of_counts
 
 
